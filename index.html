@@ -11,10 +11,20 @@
 <meta property="og:title" content="Shohruz — Biznesingizga mijoz olib keladigan saytlar" />
 <meta property="og:description" content="AI yordamida tez va arzon saytlar. Birinchi 5 mijozga −30% chegirma." />
 <meta property="og:locale" content="uz_UZ" />
+<link rel="canonical" href="https://shohruz-site.onrender.com/" />
+<meta name="robots" content="index, follow" />
+<meta property="og:url" content="https://shohruz-site.onrender.com/" />
+<meta property="og:site_name" content="Shohruz" />
+<meta property="og:image" content="https://shohruz-site.onrender.com/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
-<script type="application/ld+json" id="ld"></script>
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Shohruz — AI yordamida sayt va Telegram botlar", "url": "https://shohruz-site.onrender.com/", "image": "https://shohruz-site.onrender.com/og-image.png", "logo": "https://shohruz-site.onrender.com/favicon.svg", "description": "Landing sahifa, onlayn do'kon, Telegram bot va veb-ilovalar — AI yordamida tez va arzon. Birinchi 5 mijozga −30% chegirma.", "areaServed": {"@type": "Country", "name": "Uzbekistan"}, "availableLanguage": ["uz", "ru"], "priceRange": "$85–$1500+", "sameAs": ["https://t.me/wakho701"], "contactPoint": {"@type": "ContactPoint", "contactType": "customer service", "url": "https://t.me/wakho701", "availableLanguage": ["uz", "ru"]}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Sayt yasash qancha turadi?", "acceptedAnswer": {"@type": "Answer", "text": "Sayt-vizitka $150 dan, landing sahifa $250 dan, onlayn do'kon $1000 dan. Birinchi 5 mijozga −30% chegirma."}}, {"@type": "Question", "name": "Sayt qancha vaqtda tayyor bo'ladi?", "acceptedAnswer": {"@type": "Answer", "text": "Oddiy ishlar 2–5 kun, o'rtacha 1–2 hafta, murakkab tizimlar 2–6 hafta."}}, {"@type": "Question", "name": "To'lov qanday amalga oshiriladi?", "acceptedAnswer": {"@type": "Answer", "text": "50% oldindan, 50% — natijani ko'rib, rozi bo'lganingizdan keyin."}}, {"@type": "Question", "name": "AI yordamida qilingan sayt sifatli bo'ladimi?", "acceptedAnswer": {"@type": "Answer", "text": "Ha. Sayt keng tarqalgan texnologiyalarda yoziladi, telefon va kompyuterda tekshiriladi va siz tasdiqlamaguningizcha topshirilmaydi."}}]}]</script>
 <style>
   :root {
     --bg: #05050a; --bg-2: #0b0b15; --ink: #f4f4f8; --muted: #9a9cae;
@@ -623,13 +633,6 @@ function renderContent() {
   $("#fService").innerHTML = `<option value="">Tanlang yoki bilmayman</option>` + PROFILE.pricing.map(l =>
     `<optgroup label="${esc(l.level)}">${l.items.map(i => `<option value="${esc(i.name)}">${esc(i.name)}</option>`).join("")}</optgroup>`).join("");
 
-  $("#ld").textContent = JSON.stringify({
-    "@context": "https://schema.org", "@type": "ProfessionalService",
-    name: `${PROFILE.name} — AI yordamida sayt va botlar`, areaServed: "UZ",
-    url: location.href.startsWith("http") ? location.href : undefined,
-    sameAs: [`https://t.me/${PROFILE.telegram}`],
-    priceRange: `${money(Math.min(...allItems.map(i => i.price)))}–${money(Math.max(...allItems.map(i => i.price)), true)}`,
-  });
 }
 
 function renderOffer() {

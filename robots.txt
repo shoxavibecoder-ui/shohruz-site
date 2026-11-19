@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://shohruz-site.onrender.com/sitemap.xml
