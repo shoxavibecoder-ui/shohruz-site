@@ -1,0 +1,844 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Shohruz — Sayt, do'kon va Telegram bot yasash | Ochilish chegirmasi −30%</title>
+<meta name="description" content="Landing, onlayn do'kon, Telegram bot va veb-ilovalar — AI yordamida tez va arzon. Birinchi 5 mijozga −30% chegirma. Telegram: @wakho701" />
+<meta name="keywords" content="sayt yasash, landing page, sayt buyurtma, Toshkent, veb dasturchi, telegram bot, onlayn do'kon, sayt narxi" />
+<meta name="theme-color" content="#05050a" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Shohruz — Biznesingizga mijoz olib keladigan saytlar" />
+<meta property="og:description" content="AI yordamida tez va arzon saytlar. Birinchi 5 mijozga −30% chegirma." />
+<meta property="og:locale" content="uz_UZ" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+<script type="application/ld+json" id="ld"></script>
+<style>
+  :root {
+    --bg: #05050a; --bg-2: #0b0b15; --ink: #f4f4f8; --muted: #9a9cae;
+    --line: rgba(255,255,255,.09); --glass: rgba(40,38,90,.38);
+    --accent: #b8c4ff; --accent-2: #ff8a5b; --ok: #5dff9b; --tg: #2aabee;
+    --ease: cubic-bezier(.22,1,.36,1); --gutter: clamp(16px,4vw,56px);
+    --mono: "JetBrains Mono", ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--ink); font-family: "Inter Tight", system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; line-height: 1.5; }
+  a { color: inherit; text-decoration: none; }
+  button, input, select, textarea { font: inherit; color: inherit; }
+  .serif { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; }
+  .mono { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+  ::selection { background: var(--accent); color: var(--bg); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 8px; }
+  body::after { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 100; opacity: .05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+  /* ---------- logo ---------- */
+  .logo { display: inline-flex; align-items: baseline; font-family: "Syne", sans-serif; font-weight: 800; letter-spacing: -.04em; line-height: 1; }
+  .logo em { font-size: 1.22em; font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; letter-spacing: -.01em; margin-left: .02em;
+    background: linear-gradient(120deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; padding-right: .08em; }
+  .logo b { font-size: .5em; color: var(--accent-2); margin-left: .12em; align-self: flex-start; display: inline-block; animation: spin 8s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .brand .logo { font-size: 22px; }
+
+  /* ---------- buttons ---------- */
+  .liquid { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer;
+    padding: 12px 24px; border-radius: 999px; font-weight: 600; font-size: 15px; color: #1d1838; border: 1px solid rgba(255,255,255,.85);
+    background: linear-gradient(180deg, rgba(255,255,255,0) 30%, rgba(255,255,255,.12) 76%), radial-gradient(ellipse at 50% 100%, rgba(255,255,255,.75) 0%, transparent 100%), var(--accent);
+    box-shadow: 0 8px 30px -8px rgba(184,196,255,.6), inset 0 1px 0 rgba(255,255,255,.7); transition: box-shadow .35s var(--ease); }
+  .liquid:hover { box-shadow: 0 14px 44px -6px rgba(184,196,255,.85), inset 0 1px 0 rgba(255,255,255,.7); }
+  .liquid.lg { font-size: 17px; padding: 16px 30px; }
+  .ghost { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 22px; border-radius: 999px; border: 1px solid var(--line); background: rgba(255,255,255,.03); cursor: pointer; transition: background .3s, border-color .3s; }
+  .ghost:hover { background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.25); }
+  .ghost.lg { font-size: 17px; padding: 15px 28px; }
+  .magnetic { transition: transform .5s var(--ease), box-shadow .35s var(--ease); }
+  .arrow-i { transition: transform .35s var(--ease); }
+  a:hover > .arrow-i, button:hover > .arrow-i { transform: translate(3px,-3px); }
+
+  /* ---------- nav ---------- */
+  .progress { position: fixed; top: 0; left: 0; height: 2px; width: 100%; z-index: 70; background: linear-gradient(90deg, var(--accent), var(--accent-2)); transform-origin: left; transform: scaleX(0); }
+  header { position: fixed; top: 0; left: 0; right: 0; z-index: 60; display: flex; justify-content: center; padding: 16px; transition: transform .5s var(--ease); }
+  header.hide { transform: translateY(-120%); }
+  .pill { display: flex; align-items: center; gap: clamp(16px,3.4vw,52px); padding: 8px 8px 8px 20px; border-radius: 999px; background: var(--glass); backdrop-filter: blur(16px) saturate(140%); -webkit-backdrop-filter: blur(16px) saturate(140%); border: 1px solid var(--line); }
+  .links { display: flex; gap: 24px; list-style: none; font-size: 15px; }
+  .links a { color: var(--muted); transition: color .25s; }
+  .links a:hover, .links a.active { color: var(--ink); }
+  .burger { display: none; width: 42px; height: 42px; border: 0; background: rgba(255,255,255,.06); border-radius: 50%; position: relative; cursor: pointer; }
+  .burger span { position: absolute; left: 11px; width: 20px; height: 2px; border-radius: 2px; background: var(--ink); transition: .3s var(--ease); }
+  .burger span:nth-child(1) { top: 15px; } .burger span:nth-child(2) { top: 20px; } .burger span:nth-child(3) { top: 25px; }
+  .menu-open .burger span:nth-child(1) { top: 20px; transform: rotate(45deg); }
+  .menu-open .burger span:nth-child(2) { opacity: 0; }
+  .menu-open .burger span:nth-child(3) { top: 20px; transform: rotate(-45deg); }
+  .mobile-menu { position: fixed; inset: 0; z-index: 55; display: flex; flex-direction: column; justify-content: center; gap: 4px; padding: 0 var(--gutter);
+    background: rgba(5,5,10,.96); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); opacity: 0; pointer-events: none; transition: opacity .35s var(--ease); }
+  .mobile-menu a:not(.liquid) { display: flex; align-items: baseline; gap: 14px; font-size: 40px; font-weight: 600; letter-spacing: -.04em; opacity: 0; transform: translateY(24px); transition: .45s var(--ease); }
+  .mobile-menu a small { font-family: var(--mono); font-size: 12px; color: var(--muted); letter-spacing: 0; font-weight: 400; }
+  .mobile-menu .liquid { align-self: flex-start; margin-top: 26px; }
+  .menu-open .mobile-menu { opacity: 1; pointer-events: auto; }
+  .menu-open .mobile-menu a { opacity: 1; transform: none; }
+  .menu-open { overflow: hidden; }
+
+  /* ---------- hero ---------- */
+  .hero { position: relative; min-height: 100svh; display: flex; flex-direction: column; padding: 112px var(--gutter) 36px; overflow: hidden; }
+  #dots { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
+  .glow { position: absolute; z-index: 0; border-radius: 50%; filter: blur(90px); pointer-events: none; }
+  .glow.a { width: 52vw; height: 52vw; left: -12vw; top: -18vw; background: rgba(110,120,255,.24); animation: drift 14s ease-in-out infinite alternate; }
+  .glow.b { width: 40vw; height: 40vw; right: -10vw; bottom: -12vw; background: rgba(255,138,91,.14); animation: drift 18s ease-in-out infinite alternate-reverse; }
+  @keyframes drift { to { transform: translate(6vw,4vw) scale(1.1); } }
+  .hero-inner { position: relative; z-index: 2; flex: 1; display: flex; flex-direction: column; justify-content: center; max-width: 1100px; will-change: transform, opacity; }
+  .status { align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; padding: 7px 14px 7px 8px; border-radius: 999px; border: 1px solid rgba(255,138,91,.35); background: rgba(255,138,91,.08); backdrop-filter: blur(8px); font-size: 15px; margin-bottom: 28px; transition: background .3s; }
+  .status:hover { background: rgba(255,138,91,.14); }
+  .status .tag { padding: 3px 9px; border-radius: 999px; background: var(--accent-2); color: var(--bg); font-weight: 700; font-size: 13px; }
+  .status b { font-weight: 500; }
+  .hero h1 { font-weight: 600; letter-spacing: -.055em; line-height: .95; font-size: clamp(2.9rem, 7.6vw, 7.4rem); max-width: 15ch; }
+  .hero h1 .grad { background: linear-gradient(180deg, #fff 25%, var(--accent)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .hero h1 .serif { color: var(--accent); letter-spacing: -.02em; }
+  .lead { margin-top: 26px; font-size: clamp(18px,1.6vw,22px); color: var(--muted); max-width: 48ch; }
+  .lead b { color: var(--ink); font-weight: 500; }
+  .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 34px; }
+  .trust { display: flex; gap: clamp(20px,4vw,56px); flex-wrap: wrap; margin-top: auto; padding-top: 28px; border-top: 1px solid var(--line); position: relative; z-index: 2; }
+  .trust div b { display: block; font-size: clamp(26px,2.6vw,36px); font-weight: 600; letter-spacing: -.04em; line-height: 1.1; }
+  .trust div small { color: var(--muted); font-size: 14px; }
+  .word { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .1em; margin-bottom: -.1em; }
+  .word > span { display: inline-block; transform: translateY(110%); filter: blur(8px); opacity: 0; transition: transform 1.1s var(--ease), filter 1.1s var(--ease), opacity 1.1s var(--ease); }
+  .ready .word > span { transform: none; filter: none; opacity: 1; }
+  .fade { opacity: 0; transform: translateY(28px); filter: blur(6px); transition: opacity 1s var(--ease), transform 1s var(--ease), filter 1s var(--ease); }
+  .fade.in { opacity: 1; transform: none; filter: none; }
+
+  /* ---------- marquee ---------- */
+  .marquee { border-block: 1px solid var(--line); overflow: hidden; padding: 18px 0; background: var(--bg-2); }
+  .track { display: flex; width: max-content; animation: slide 46s linear infinite; }
+  .track span { font-size: clamp(22px,3vw,40px); font-weight: 600; letter-spacing: -.03em; white-space: nowrap; display: flex; align-items: center; gap: 40px; padding-right: 40px; color: #d7d8e4; }
+  .track span::after { content: "✦"; color: var(--accent-2); font-size: .5em; }
+  @keyframes slide { to { transform: translateX(-50%); } }
+
+  /* ---------- sections ---------- */
+  section.block { scroll-margin-top: 90px; padding: clamp(90px,11vw,160px) var(--gutter); }
+  .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--muted); margin-bottom: 24px; }
+  .eyebrow::before { content: ""; width: 24px; height: 1px; background: var(--accent); }
+  h2 { font-size: clamp(2.5rem,6vw,5.6rem); font-weight: 600; letter-spacing: -.05em; line-height: .98; }
+  .sec-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; margin-bottom: 56px; }
+  .sec-head p { color: var(--muted); max-width: 40ch; font-size: 17px; }
+
+  .pains { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+  .pain { border: 1px solid var(--line); border-radius: 24px; padding: 28px; background: var(--bg-2); }
+  .pain .q { color: var(--muted); font-size: 16px; text-decoration: line-through; text-decoration-color: rgba(255,138,91,.7); }
+  .pain .a { margin-top: 18px; font-size: 21px; font-weight: 500; letter-spacing: -.02em; line-height: 1.3; display: flex; gap: 10px; }
+  .pain .a::before { content: "→"; color: var(--ok); }
+
+  /* ---------- offer ---------- */
+  .offer { position: relative; overflow: hidden; border-radius: 36px; border: 1px solid rgba(255,138,91,.3); padding: clamp(28px,5vw,64px);
+    background: radial-gradient(70% 90% at 100% 0%, rgba(255,138,91,.22), transparent 60%), radial-gradient(60% 80% at 0% 100%, rgba(110,120,255,.22), transparent 60%), var(--bg-2);
+    display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(28px,5vw,72px); align-items: center; }
+  .offer .big { font-family: "Syne", sans-serif; font-weight: 800; font-size: clamp(5rem,14vw,12rem); line-height: .85; letter-spacing: -.06em;
+    background: linear-gradient(160deg, #fff 20%, var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .offer h2 { font-size: clamp(2rem,4.4vw,4rem); margin: 18px 0 16px; }
+  .offer p { color: var(--muted); font-size: 17px; max-width: 46ch; }
+  .offer p b { color: var(--ink); font-weight: 500; }
+  .slots { display: grid; gap: 14px; }
+  .slot-row { display: flex; gap: 8px; }
+  .slot-row i { flex: 1; height: 54px; border-radius: 14px; border: 1px dashed rgba(255,255,255,.22); display: grid; place-items: center; font-style: normal; font-family: var(--mono); font-size: 13px; color: var(--muted); }
+  .slot-row i.taken { border-style: solid; border-color: transparent; background: rgba(255,255,255,.08); color: #6d6f82; text-decoration: line-through; }
+  .slot-row i.free { border-color: rgba(93,255,155,.45); color: var(--ok); background: rgba(93,255,155,.05); }
+  .slots .cap { display: flex; justify-content: space-between; color: var(--muted); font-size: 14px; }
+  .slots .cap b { color: var(--ok); font-weight: 600; }
+  .perks { list-style: none; display: grid; gap: 10px; margin-top: 8px; font-size: 15px; }
+  .perks li { display: flex; gap: 10px; } .perks li::before { content: "✓"; color: var(--ok); font-weight: 700; }
+
+  /* ---------- pricing ---------- */
+  .levels { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; align-items: start; }
+  .level { border: 1px solid var(--line); border-radius: 28px; background: var(--bg-2); overflow: hidden; }
+  .level.mid { border-color: rgba(184,196,255,.45); box-shadow: 0 30px 80px -44px rgba(184,196,255,.6); }
+  .level-head { padding: 26px 26px 20px; border-bottom: 1px solid var(--line); background: linear-gradient(170deg, var(--tint), transparent 70%); }
+  .level-head .top { display: flex; justify-content: space-between; align-items: center; }
+  .level-head h3 { font-size: 28px; font-weight: 600; letter-spacing: -.03em; }
+  .diff { display: flex; gap: 5px; } .diff i { width: 22px; height: 6px; border-radius: 3px; background: rgba(255,255,255,.12); } .diff i.on { background: var(--c); }
+  .level-head p { color: var(--muted); font-size: 15px; margin-top: 6px; }
+  .items { list-style: none; }
+  .item { display: grid; grid-template-columns: 1fr auto; gap: 6px 14px; padding: 18px 26px; border-bottom: 1px solid var(--line); transition: background .3s; }
+  .item:last-child { border-bottom: 0; }
+  .item:hover { background: rgba(255,255,255,.03); }
+  .item h4 { font-size: 17px; font-weight: 600; letter-spacing: -.01em; }
+  .item p { grid-column: 1; color: var(--muted); font-size: 14px; line-height: 1.4; }
+  .item .pr { grid-row: 1 / span 2; grid-column: 2; text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
+  .item .pr s { color: #6d6f82; font-size: 14px; }
+  .item .pr b { font-size: 22px; font-weight: 600; letter-spacing: -.03em; color: var(--ink); }
+  .item .meta2 { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; margin-top: 6px; }
+  .item .term { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+  .item .order { font-size: 14px; font-weight: 600; color: var(--accent); display: inline-flex; gap: 6px; align-items: center; }
+  .item .order:hover { color: var(--ink); }
+  .extras { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .extras > span:first-child { color: var(--muted); margin-right: 6px; }
+  .extras .x { padding: 9px 14px; border-radius: 999px; border: 1px solid var(--line); font-size: 14px; color: #d7d8e4; }
+  .extras .x b { color: var(--accent); font-weight: 600; margin-left: 6px; }
+  .guarantee { margin-top: 20px; display: flex; align-items: center; gap: 16px; padding: 20px 24px; border-radius: 22px; border: 1px dashed rgba(93,255,155,.35); background: rgba(93,255,155,.04); }
+  .guarantee .ic { flex: none; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: rgba(93,255,155,.12); color: var(--ok); font-size: 20px; }
+  .guarantee p { color: var(--muted); } .guarantee b { color: var(--ink); font-weight: 500; }
+
+  /* ---------- concepts ---------- */
+  .grid { display: grid; grid-template-columns: repeat(2,1fr); gap: clamp(16px,2vw,28px); }
+  .card { position: relative; border-radius: 28px; overflow: hidden; border: 1px solid var(--line); background: var(--bg-2); transition: border-color .4s; display: block; }
+  .card:nth-child(even) { margin-top: 72px; }
+  .card:hover { border-color: rgba(184,196,255,.4); }
+  .art { position: relative; aspect-ratio: 16/10; overflow: hidden; }
+  .art .bg { position: absolute; inset: -12%; transition: transform 1.4s var(--ease); }
+  .card:hover .art .bg { transform: scale(1.08) rotate(-2deg); }
+  .concept { position: absolute; left: 18px; top: 18px; z-index: 2; padding: 6px 12px; border-radius: 999px; background: rgba(5,5,10,.7); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,.14); }
+  .mock { position: absolute; left: 9%; right: 9%; top: 22%; bottom: -10%; border-radius: 16px; background: rgba(8,8,16,.74); border: 1px solid rgba(255,255,255,.14); backdrop-filter: blur(8px); padding: 16px; transition: transform 1s var(--ease); box-shadow: 0 40px 80px -24px rgba(0,0,0,.7); }
+  .card:hover .mock { transform: translateY(-16px); }
+  .mock .bar { display: flex; gap: 6px; margin-bottom: 16px; } .mock .bar i { width: 9px; height: 9px; border-radius: 50%; background: rgba(255,255,255,.22); }
+  .mock .t { font-weight: 600; font-size: clamp(18px,2.2vw,30px); letter-spacing: -.04em; line-height: 1; margin-bottom: 12px; }
+  .mock .ln { height: 9px; border-radius: 6px; background: rgba(255,255,255,.12); margin-bottom: 8px; }
+  .mock .row { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 10px; margin-top: 16px; }
+  .mock .row div { height: 60px; border-radius: 10px; background: rgba(255,255,255,.07); }
+  .meta { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 24px 24px; }
+  .meta h3 { font-size: clamp(21px,2vw,27px); font-weight: 600; letter-spacing: -.03em; }
+  .meta p { color: var(--muted); font-size: 15px; }
+  .tags { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+  .tags span { font-size: 12px; padding: 5px 11px; border-radius: 999px; border: 1px solid var(--line); color: #c9cad8; white-space: nowrap; }
+
+  /* ---------- process ---------- */
+  .steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+  .step { position: relative; border: 1px solid var(--line); border-radius: 24px; padding: 26px; min-height: 230px; display: flex; flex-direction: column; background: var(--bg-2); overflow: hidden; }
+  .step::after { content: ""; position: absolute; width: 180px; height: 180px; right: -60px; top: -60px; border-radius: 50%; background: radial-gradient(var(--c), transparent 70%); }
+  .step .mono { color: var(--muted); }
+  .step h3 { margin-top: auto; font-size: 24px; font-weight: 600; letter-spacing: -.03em; }
+  .step p { color: var(--muted); font-size: 15px; margin-top: 8px; min-height: 3em; }
+
+  /* ---------- faq ---------- */
+  .faq { display: grid; grid-template-columns: 1fr 1.5fr; gap: clamp(32px,6vw,96px); }
+  .faq-list { border-top: 1px solid var(--line); }
+  details { border-bottom: 1px solid var(--line); }
+  summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 24px 0; font-size: clamp(19px,1.8vw,23px); font-weight: 500; letter-spacing: -.02em; }
+  summary::-webkit-details-marker { display: none; }
+  summary .pm { flex: none; width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center; transition: transform .4s var(--ease), background .3s; }
+  details[open] summary .pm { transform: rotate(45deg); background: var(--accent); color: var(--bg); border-color: var(--accent); }
+  details p { color: var(--muted); padding: 0 56px 24px 0; font-size: 16px; }
+
+  /* ---------- contact ---------- */
+  .contact { position: relative; overflow: hidden; }
+  .contact .glow.c { width: 60vw; height: 34vw; left: 20vw; top: 20%; background: rgba(120,130,255,.18); }
+  .contact-grid { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px,6vw,96px); align-items: start; }
+  .contact h2 { font-size: clamp(2.8rem,7vw,6.6rem); line-height: 1.02; padding-bottom: .1em; background: linear-gradient(180deg,#fff 30%,var(--accent)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .contact-side p { color: var(--muted); font-size: 18px; margin: 20px 0 28px; max-width: 40ch; }
+  .tg-card { display: flex; align-items: center; gap: 16px; padding: 18px 20px; border-radius: 22px; border: 1px solid rgba(42,171,238,.35); background: rgba(42,171,238,.07); transition: background .3s, transform .5s var(--ease); }
+  .tg-card:hover { background: rgba(42,171,238,.13); }
+  .tg-card .ic { flex: none; width: 52px; height: 52px; border-radius: 50%; background: var(--tg); display: grid; place-items: center; color: #fff; }
+  .tg-card .ic svg { width: 26px; height: 26px; }
+  .tg-card b { display: block; font-size: 20px; font-weight: 600; letter-spacing: -.02em; }
+  .tg-card small { color: var(--muted); }
+  .tg-card .go { margin-left: auto; font-size: 22px; }
+  form { display: grid; gap: 14px; padding: clamp(22px,3vw,34px); border-radius: 28px; border: 1px solid var(--line); background: rgba(11,11,21,.8); backdrop-filter: blur(12px); }
+  form h3 { font-size: 24px; font-weight: 600; letter-spacing: -.02em; }
+  form .sub { color: var(--muted); font-size: 15px; margin-top: -8px; }
+  .field { display: grid; gap: 6px; }
+  .field label { font-size: 14px; color: var(--muted); }
+  .field input, .field select, .field textarea { width: 100%; padding: 14px 16px; border-radius: 14px; border: 1px solid var(--line); background: rgba(255,255,255,.04); outline: none; transition: border-color .25s, background .25s; }
+  .field select option, .field select optgroup { background: var(--bg-2); }
+  .field textarea { resize: vertical; min-height: 96px; }
+  .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--accent); background: rgba(184,196,255,.06); }
+  .field.err input { border-color: var(--accent-2); }
+  .field .msg { font-size: 13px; color: var(--accent-2); display: none; }
+  .field.err .msg { display: block; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .est { display: none; justify-content: space-between; align-items: center; padding: 12px 16px; border-radius: 14px; background: rgba(93,255,155,.06); border: 1px solid rgba(93,255,155,.25); font-size: 15px; }
+  .est.show { display: flex; }
+  .est b { color: var(--ok); } .est s { color: #6d6f82; margin-right: 8px; }
+  form .liquid { width: 100%; margin-top: 4px; }
+  form .note { font-size: 13px; color: var(--muted); text-align: center; }
+  .sent { display: grid; gap: 10px; padding: 16px; border-radius: 16px; border: 1px solid rgba(42,171,238,.4); background: rgba(42,171,238,.08); }
+  .sent p { font-size: 15px; }
+  .sent .go-tg { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 14px; border-radius: 999px; background: var(--tg); color: #fff; font-weight: 600; }
+
+  .toast { position: fixed; left: 50%; bottom: 96px; z-index: 150; visibility: hidden; transform: translate(-50%, 30px); opacity: 0; padding: 12px 20px; border-radius: 999px; background: var(--ink); color: var(--bg); font-weight: 500; transition: .45s var(--ease); max-width: calc(100vw - 32px); text-align: center; }
+  .toast.show { visibility: visible; transform: translate(-50%,0); opacity: 1; }
+
+  .fab { position: fixed; right: 20px; bottom: 20px; z-index: 65; display: flex; align-items: center; gap: 10px; padding: 12px 18px 12px 12px; border-radius: 999px; background: var(--tg); color: #fff; font-weight: 600; box-shadow: 0 14px 40px -10px rgba(42,171,238,.7); transform: translateY(140%); transition: transform .5s var(--ease); }
+  .fab.show { transform: none; }
+  .fab svg { width: 26px; height: 26px; }
+  .mbar { display: none; }
+
+  footer { border-top: 1px solid var(--line); overflow: hidden; }
+  .foot-row { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 26px var(--gutter); color: var(--muted); font-size: 14px; }
+  .foot-row a:hover { color: var(--ink); }
+  .giant { display: flex; justify-content: center; padding-top: 2vw; margin-bottom: -3vw; user-select: none; opacity: .35; }
+  .giant .logo { font-size: 21vw; }
+  .giant .logo b { animation: none; }
+
+  .cursor { position: fixed; left: 0; top: 0; width: 10px; height: 10px; border-radius: 50%; background: var(--ink); pointer-events: none; z-index: 180; mix-blend-mode: difference; transform: translate(-50%,-50%); transition: width .35s var(--ease), height .35s var(--ease); }
+  .cursor.big { width: 56px; height: 56px; }
+  @media (hover: none), (pointer: coarse) { .cursor { display: none; } }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 1100px) { .levels { grid-template-columns: 1fr 1fr; } .level.hard { grid-column: 1 / -1; } }
+  @media (max-width: 960px) {
+    .links, .pill > .liquid { display: none; }
+    .burger { display: block; }
+    .pill { width: 100%; justify-content: space-between; padding: 6px 6px 6px 18px; }
+    .pains, .levels { grid-template-columns: 1fr; }
+    .level.hard { grid-column: auto; }
+    .offer { grid-template-columns: 1fr; }
+    .grid { grid-template-columns: 1fr; }
+    .card:nth-child(even) { margin-top: 0; }
+    .meta { flex-direction: column; align-items: flex-start; }
+    .tags { justify-content: flex-start; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .faq, .contact-grid { grid-template-columns: 1fr; }
+    details p { padding-right: 0; }
+    .fab { display: none; }
+    .mbar { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 65; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: rgba(5,5,10,.88); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-top: 1px solid var(--line); transform: translateY(110%); transition: transform .5s var(--ease); }
+    .mbar.show { transform: none; }
+    .mbar a { padding: 13px; font-size: 15px; }
+    .mbar .tgb { display: flex; align-items: center; justify-content: center; gap: 8px; border-radius: 999px; background: var(--tg); color: #fff; font-weight: 600; }
+    .mbar .tgb svg { width: 20px; height: 20px; }
+    footer { padding-bottom: 76px; }
+    .toast { bottom: 90px; }
+  }
+  @media (max-width: 560px) {
+    .steps, .two { grid-template-columns: 1fr; }
+    .step { min-height: 190px; }
+    .hero-cta a { flex: 1 1 100%; }
+    .mock .row div { height: 38px; }
+    .item { padding: 16px 20px; }
+    .level-head { padding: 22px 20px 18px; }
+    .slot-row i { height: 46px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .word > span, .fade { transform: none; filter: none; opacity: 1; }
+  }
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<div class="cursor" aria-hidden="true"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<header id="header">
+  <nav class="pill" aria-label="Asosiy menyu">
+    <a href="#top" class="brand" aria-label="Bosh sahifa"><span class="logo" data-logo></span></a>
+    <ul class="links">
+      <li><a href="#offer">Chegirma</a></li>
+      <li><a href="#pricing">Narxlar</a></li>
+      <li><a href="#concepts">Nima yasayman</a></li>
+      <li><a href="#faq">Savollar</a></li>
+    </ul>
+    <a href="#contact" class="liquid magnetic">Bepul konsultatsiya</a>
+    <button class="burger" aria-label="Menyuni ochish" aria-expanded="false"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<div class="mobile-menu" aria-hidden="true">
+  <a href="#offer"><small>01</small>Chegirma</a>
+  <a href="#pricing"><small>02</small>Narxlar</a>
+  <a href="#concepts"><small>03</small>Nima yasayman</a>
+  <a href="#faq"><small>04</small>Savollar</a>
+  <a href="#contact" class="liquid lg">Bepul konsultatsiya</a>
+</div>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="glow a"></div><div class="glow b"></div>
+    <canvas id="dots" aria-hidden="true"></canvas>
+    <div class="hero-inner" id="heroInner">
+      <a href="#offer" class="status fade"><span class="tag" id="heroDiscount">−30%</span><b id="heroOffer">Ochilish chegirmasi — birinchi 5 mijozga</b></a>
+      <h1 class="split"><span class="grad">Biznesingizga mijoz olib keladigan</span> <span class="serif">saytlar</span></h1>
+      <p class="lead fade">Landing, onlayn do'kon, Telegram bot yoki veb-ilova — <b>AI yordamida</b> tez, arzon va sifatli. Siz biznes bilan shug'ullaning, mijozlarni sayt olib kelsin.</p>
+      <div class="hero-cta fade">
+        <a href="#contact" class="liquid lg magnetic">Bepul konsultatsiya olish <svg class="arrow-i" width="16" height="16" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 11L11 3M11 3H4.5M11 3V9.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="#pricing" class="ghost lg magnetic">Narxlarni ko'rish</a>
+      </div>
+    </div>
+    <div class="trust fade" id="trust"></div>
+  </section>
+
+  <div class="marquee" aria-label="Xizmatlar"><div class="track" id="track"></div></div>
+
+  <!-- WHY -->
+  <section class="block" id="why">
+    <div class="sec-head">
+      <div><div class="eyebrow mono">Nega men bilan</div><h2>Muammo emas — <span class="serif" style="color:var(--accent)">natija</span></h2></div>
+      <p class="fade">Ko'p bizneslar sayt uchun pul to'laydi-yu, mijoz ololmaydi. Men buni boshqacha qilaman.</p>
+    </div>
+    <div class="pains" id="pains"></div>
+  </section>
+
+  <!-- OFFER -->
+  <section class="block" id="offer" style="padding-top:0">
+    <div class="offer fade">
+      <div>
+        <div class="big" id="offerBig">−30%</div>
+        <h2>Ochilish <span class="serif">taklifi</span></h2>
+        <p id="offerText"></p>
+      </div>
+      <div class="slots">
+        <div class="cap"><span>Chegirmali joylar</span><span id="slotsCap"></span></div>
+        <div class="slot-row" id="slotRow"></div>
+        <ul class="perks" id="perks"></ul>
+        <a href="#contact" class="liquid lg magnetic" style="margin-top:10px">Joyni band qilish</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="block" id="pricing" style="padding-top:0">
+    <div class="sec-head">
+      <div><div class="eyebrow mono">Narxlar</div><h2>Qiyinchilikka qarab <span class="serif" style="color:var(--accent)">aniq narx</span></h2></div>
+      <p class="fade" id="pricingNote"></p>
+    </div>
+    <div class="levels" id="levels"></div>
+    <div class="extras fade" id="extras"></div>
+    <div class="guarantee fade"><div class="ic">✓</div><p id="guaranteeText"></p></div>
+  </section>
+
+  <!-- CONCEPTS -->
+  <section class="block" id="concepts" style="padding-top:0">
+    <div class="sec-head">
+      <div><div class="eyebrow mono">Nima yasay olaman</div><h2>Saytingiz <span class="serif" style="color:var(--accent)">shunday</span> bo'lishi mumkin</h2></div>
+      <p class="fade">Bular — konsept dizaynlar, ya'ni sizning biznesingiz uchun nima qila olishimga misollar. Birinchi haqiqiy loyiha sizniki bo'lishi mumkin.</p>
+    </div>
+    <div class="grid" id="concepts-grid"></div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="block" id="process" style="padding-top:0">
+    <div class="sec-head">
+      <div><div class="eyebrow mono">Qanday ishlaymiz</div><h2>4 oddiy <span class="serif" style="color:var(--accent)">qadam</span></h2></div>
+    </div>
+    <div class="steps" id="steps"></div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="block faq" id="faq" style="padding-top:0">
+    <div>
+      <div class="eyebrow mono">Savol-javob</div>
+      <h2>Ko'p beriladigan savollar</h2>
+      <p style="color:var(--muted);margin:22px 0 26px;font-size:17px">Javob topmadingizmi? Telegramda yozing.</p>
+      <a href="#" class="ghost" data-tg>Telegramda so'rash ↗</a>
+    </div>
+    <div class="faq-list" id="faqList"></div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="block contact" id="contact">
+    <div class="glow c"></div>
+    <div class="contact-grid">
+      <div class="contact-side">
+        <div class="eyebrow mono">Bepul konsultatsiya</div>
+        <h2>Keling, birga <span class="serif">boshlaymiz</span></h2>
+        <p>Formani to'ldiring yoki to'g'ridan-to'g'ri Telegramga yozing. Loyihangizni tahlil qilib, aniq narx va muddatni aytaman. Bu sizni hech narsaga majbur qilmaydi.</p>
+        <a class="tg-card magnetic" href="#" data-tg>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.2 1.1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.3 13 1.5 11.5c-1-.3-1.1-1 .2-1.5L20.6 2.7c.9-.3 1.6.2 1.3 1.6z"/></svg></span>
+          <span><b id="tgHandle">@wakho701</b><small>Telegramda yozish</small></span>
+          <span class="go" aria-hidden="true">↗</span>
+        </a>
+      </div>
+      <form id="leadForm" novalidate>
+        <h3>Ariza qoldiring</h3>
+        <p class="sub">30 soniya vaqtingizni oladi</p>
+        <div class="two">
+          <div class="field"><label for="fName">Ismingiz *</label><input id="fName" name="name" autocomplete="name" placeholder="Masalan, Aziz" /><span class="msg">Ismingizni yozing</span></div>
+          <div class="field"><label for="fContact">Telefon yoki Telegram *</label><input id="fContact" name="contact" autocomplete="tel" placeholder="+998 90 123 45 67" /><span class="msg">Telefon raqam yoki @username yozing</span></div>
+        </div>
+        <div class="field"><label for="fService">Qaysi xizmat kerak?</label><select id="fService" name="service"></select></div>
+        <div class="est" id="est"><span>Taxminiy narx:</span><span><s id="estOld"></s><b id="estNew"></b></span></div>
+        <div class="field"><label for="fMsg">Biznesingiz haqida qisqacha</label><textarea id="fMsg" name="message" placeholder="Nima bilan shug'ullanasiz va saytdan nimani kutasiz?"></textarea></div>
+        <button class="liquid lg" type="submit">Arizani tayyorlash <svg class="arrow-i" width="16" height="16" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 11L11 3M11 3H4.5M11 3V9.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="sent" id="sent" hidden><p>Ariza tayyor. Telegramni oching va xabarni yuboring:</p><a class="go-tg" id="sendLink" href="#" target="_blank" rel="noopener">Telegramda yuborish ↗</a></div>
+        <p class="note">Telegram tayyor xabar bilan ochiladi — faqat "Yuborish"ni bosasiz.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="foot-row">
+    <span>© <span id="year"></span> <span data-name>Shohruz</span> · AI yordamida veb-yechimlar</span>
+    <a href="#top">Yuqoriga ↑</a>
+  </div>
+  <div class="giant" aria-hidden="true"><span class="logo" data-logo></span></div>
+</footer>
+
+<a class="fab" href="#" data-tg aria-label="Telegramda yozish">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.2 1.1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.3 13 1.5 11.5c-1-.3-1.1-1 .2-1.5L20.6 2.7c.9-.3 1.6.2 1.3 1.6z"/></svg>
+  Telegramda yozish
+</a>
+<div class="mbar" id="mbar">
+  <a class="tgb" href="#" data-tg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.2 1.1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.3 13 1.5 11.5c-1-.3-1.1-1 .2-1.5L20.6 2.7c.9-.3 1.6.2 1.3 1.6z"/></svg>Telegram</a>
+  <a class="liquid" href="#contact">Ariza qoldirish</a>
+</div>
+
+<script>
+/* =================================================================
+   SAYT MA'LUMOTLARI — hammasi shu blokda. O'zgartirish uchun faqat
+   shu yerni tahrirlang.
+   ================================================================= */
+const PROFILE = {
+  name: "Shohruz",
+  logo: ["Shoh", "ruz"],            // logotip: birinchi qism qalin, ikkinchisi ijodiy kursiv
+  telegram: "wakho701",             // @ belgisisiz
+  currency: "$",
+
+  discount: {
+    percent: 30,                    // chegirma foizi
+    totalSlots: 5,                  // nechta mijozga
+    taken: 0,                       // har bir yangi mijozdan keyin 1 ga oshiring
+  },
+
+  // To'lov va kafolat shartlari — o'zingizga moslang
+  terms: {
+    payment: "50% oldindan, 50% — natijani ko'rib, rozi bo'lganingizdan keyin",
+    revisions: 2,
+    supportDays: 14,
+  },
+
+  marquee: ["AI bilan tez", "Landing sahifalar", "Onlayn do'konlar", "Telegram botlar", "Telegram Mini App", "Korporativ saytlar", "AI chat-botlar", "Veb-ilovalar", "SEO"],
+
+  pains: [
+    { q: "Sayt bor, lekin undan qo'ng'iroq yo'q", a: "Har bir blok mijozni arizaga olib boradigan qilib quriladi" },
+    { q: "Agentliklar oylab ishlaydi va qimmat", a: "AI vositalar bilan kunlarda va arzonroq, har bir natija qo'lda tekshiriladi" },
+    { q: "Sayt telefonda sekin va qiyshiq ochiladi", a: "Telefonga moslashgan, tez yuklanadigan va Google'ga tayyor" },
+  ],
+
+  // NARXLAR — qiyinchilikka qarab. price: chegirmasiz narx ($)
+  pricing: [
+    { level: "Oson", key: "easy", note: "Tez start uchun — bir necha kunda tayyor", color: "#5dff9b", tint: "rgba(93,255,155,.08)",
+      items: [
+        { name: "Sayt-vizitka",        desc: "1 sahifa: siz haqingizda, xizmatlar, aloqa",                 days: "2–3 kun", price: 150 },
+        { name: "Landing sahifa",      desc: "Bitta mahsulot yoki xizmatni sotadigan sahifa + ariza formasi", days: "3–5 kun", price: 250 },
+        { name: "Oddiy Telegram bot",  desc: "Menyu, ma'lumot, ariza qabul qilish",                          days: "2–3 kun", price: 120 },
+        { name: "Saytni yangilash",    desc: "Eski saytni zamonaviy dizayn va tezlikka o'tkazish",           days: "3–5 kun", price: 200 },
+      ] },
+    { level: "O'rta", key: "mid", note: "Ko'proq mijoz va avtomatlashtirish uchun", color: "#b8c4ff", tint: "rgba(184,196,255,.1)",
+      items: [
+        { name: "Korporativ sayt",      desc: "5–7 sahifa, animatsiyali premium dizayn, SEO",              days: "7–10 kun", price: 500 },
+        { name: "Portfolio / blog",     desc: "Ishlar galereyasi yoki maqolalar bilan sayt",                days: "5–7 kun",  price: 350 },
+        { name: "Telegram bot + admin", desc: "Buyurtmalar, baza, admin panel, xabar yuborish",             days: "5–10 kun", price: 400 },
+        { name: "AI chat-bot",          desc: "Sayt yoki Telegram uchun mijozlarga javob beruvchi AI",      days: "5–7 kun",  price: 450 },
+      ] },
+    { level: "Murakkab", key: "hard", note: "To'liq biznes tizimlari", color: "#ff8a5b", tint: "rgba(255,138,91,.1)",
+      items: [
+        { name: "Onlayn do'kon",        desc: "Katalog, savat, Payme/Click to'lovlari, admin panel",        days: "2–3 hafta", price: 1000 },
+        { name: "Telegram Mini App",    desc: "Telegram ichidagi do'kon yoki xizmat ilovasi",              days: "2–3 hafta", price: 900 },
+        { name: "Veb-ilova / CRM",      desc: "Kabinetlar, rollar, hisobotlar — biznesingizga moslab",      days: "3–6 hafta", price: 1500, plus: true },
+      ] },
+  ],
+  extras: [
+    { name: "Domen + hosting sozlash", price: 30 },
+    { name: "SEO optimizatsiya", price: 100 },
+    { name: "Logotip", price: 80 },
+    { name: "Oylik qo'llab-quvvatlash", price: 50, suffix: "/oy" },
+  ],
+
+  concepts: [
+    { title: "Kiyim do'koni",    desc: "Onlayn katalog va tez buyurtma",     tags: ["Onlayn do'kon", "Payme"],  hue: [250, 20] },
+    { title: "Stomatologiya",    desc: "Qabulga yozilish landingi",          tags: ["Landing", "SEO"],          hue: [200, 280] },
+    { title: "Sayohat agentligi", desc: "Turlar va onlayn bron",             tags: ["Veb-ilova", "Xarita"],     hue: [30, 340] },
+    { title: "O'quv markazi",    desc: "Telegram bot + o'quvchilar bazasi",  tags: ["Telegram bot", "Admin"],   hue: [160, 220] },
+  ],
+
+  process: [
+    { title: "Suhbat",          desc: "Maqsad, auditoriya va raqobatchilarni tahlil qilamiz.", color: "rgba(184,196,255,.3)" },
+    { title: "Dizayn",          desc: "Tuzilma va dizaynni ko'rsataman, siz tasdiqlaysiz.",     color: "rgba(255,138,91,.28)" },
+    { title: "Qurish",          desc: "Sayt yig'iladi, jarayonni doim ko'rib turasiz.",         color: "rgba(93,255,155,.2)" },
+    { title: "Ishga tushirish", desc: "Domen, analitika, SEO — va birinchi arizalar.",         color: "rgba(200,140,255,.28)" },
+  ],
+};
+
+PROFILE.faq = [
+  { q: "Portfolio yo'q — nega sizga ishonishim kerak?", a: `Men zamonaviy AI vositalari bilan ishlayman: kod va dizaynni AI tez tayyorlaydi, men esa talablaringizni yig'aman, natijani tekshiraman va doim siz bilan aloqada bo'laman. Freelancer sifatida endi boshlaganim uchun birinchi mijozlarga −${PROFILE.discount.percent}% chegirma beraman. To'lovning yarmini natijani ko'rgandan keyin to'laysiz — xavf siz uchun minimal.` },
+  { q: "AI yordamida qilingan sayt sifatli bo'ladimi?", a: "Ha. Sayt oddiy, keng tarqalgan texnologiyalarda yoziladi, keyin istalgan dasturchi uni bemalol davom ettira oladi. Har bir sahifa telefon va kompyuterda tekshiriladi va siz tasdiqlamaguningizcha topshirilmaydi. AI tufayli tejalgan vaqt narxga o'tadi — shuning uchun arzonroq." },
+  { q: "Chegirma qanday ishlaydi?", a: `Birinchi ${PROFILE.discount.totalSlots} ta mijozga barcha xizmatlarga −${PROFILE.discount.percent}%. Joylar tugagach, odatiy narxlar amal qiladi. Narxlar jadvalida chegirmali narx allaqachon ko'rsatilgan.` },
+  { q: "Sayt qancha vaqtda tayyor bo'ladi?", a: "Qiyinchilikka bog'liq: oddiy ishlar 2–5 kun, o'rtacha 1–2 hafta, murakkab tizimlar 2–6 hafta. Aniq muddatni konsultatsiyada aytaman." },
+  { q: "To'lov qanday amalga oshiriladi?", a: `${PROFILE.terms.payment}.` },
+  { q: "Dizayn yoqmasa nima bo'ladi?", a: `${PROFILE.terms.revisions} marta bepul qayta ishlayman. Dizaynni siz tasdiqlamaguningizcha keyingi bosqichga o'tmaymiz.` },
+  { q: "Domen, hosting va kod kimniki bo'ladi?", a: "Hammasi sizning nomingizda bo'ladi. Sayt to'liq sizniki — kodi va kirish ma'lumotlari bilan birga topshiriladi." },
+];
+/* ================================================================= */
+
+const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const finePointer = matchMedia("(hover: hover) and (pointer: fine)").matches;
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+const pad = n => String(n).padStart(2, "0");
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const tgLink = text => `https://t.me/${PROFILE.telegram}${text ? `?text=${encodeURIComponent(text)}` : ""}`;
+
+const D = PROFILE.discount;
+const slotsLeft = Math.max(0, D.totalSlots - D.taken);
+const discountActive = slotsLeft > 0 && D.percent > 0;
+const money = (v, plus) => `${PROFILE.currency}${v.toLocaleString("en-US")}${plus ? "+" : ""}`;
+const discounted = v => Math.round((v * (100 - D.percent)) / 100 / 5) * 5;
+const allItems = PROFILE.pricing.flatMap(l => l.items.map(i => ({ ...i, level: l.level })));
+
+/* ---------- render ---------- */
+function renderContent() {
+  $$("[data-name]").forEach(el => (el.textContent = PROFILE.name));
+  $$("[data-logo]").forEach(el => (el.innerHTML = `${esc(PROFILE.logo[0])}<em>${esc(PROFILE.logo[1])}</em><b aria-hidden="true">✦</b>`));
+  $("#year").textContent = new Date().getFullYear();
+  $("#tgHandle").textContent = `@${PROFILE.telegram}`;
+  $$("[data-tg]").forEach(a => { a.href = tgLink("Assalomu alaykum! Saytingizni ko'rdim, xizmatlaringiz qiziqtirdi."); a.target = "_blank"; a.rel = "noopener"; });
+
+  $("#heroDiscount").textContent = discountActive ? `−${D.percent}%` : "Yangi";
+  $("#heroOffer").textContent = discountActive ? `Ochilish chegirmasi — ${slotsLeft} ta joy qoldi` : "Bepul konsultatsiya — Telegramda yozing";
+
+  const trust = [
+    { value: "AI", label: "bilan tez va arzon" },
+    discountActive && { value: `−${D.percent}%`, label: `birinchi ${D.totalSlots} mijozga` },
+    { value: "50 / 50", label: "natijani ko'rib to'lov" },
+    { value: "Bepul", label: "konsultatsiya" },
+  ].filter(Boolean);
+  $("#trust").innerHTML = trust.map(t => `<div><b>${esc(t.value)}</b><small>${esc(t.label)}</small></div>`).join("");
+
+  const row = PROFILE.marquee.map(t => `<span>${esc(t)}</span>`).join("");
+  $("#track").innerHTML = row + row;
+
+  $("#pains").innerHTML = PROFILE.pains.map((p, i) => `
+    <div class="pain fade" style="transition-delay:${i * .08}s"><div class="q">${esc(p.q)}</div><div class="a">${esc(p.a)}</div></div>`).join("");
+
+  renderOffer();
+  renderPricing();
+
+  $("#concepts-grid").innerHTML = PROFILE.concepts.map(p => {
+    const [h1, h2] = p.hue;
+    const bg = `radial-gradient(55% 70% at 18% 20%, hsl(${h1} 90% 65% / .95), transparent 60%), radial-gradient(55% 70% at 88% 85%, hsl(${h2} 90% 60% / .9), transparent 60%), linear-gradient(135deg, hsl(${h1} 40% 12%), hsl(${h2} 40% 8%))`;
+    return `<a class="card fade" href="#contact">
+      <div class="art"><div class="bg" style="background:${bg}"></div><span class="concept mono">Konsept</span>
+        <div class="mock"><div class="bar"><i></i><i></i><i></i></div><div class="t">${esc(p.title)}</div>
+          <div class="ln" style="width:72%"></div><div class="ln" style="width:54%"></div><div class="row"><div></div><div></div><div></div></div></div></div>
+      <div class="meta"><div><h3>${esc(p.title)}</h3><p>${esc(p.desc)}</p></div><div class="tags">${p.tags.map(t => `<span>${esc(t)}</span>`).join("")}</div></div>
+    </a>`;
+  }).join("");
+
+  $("#steps").innerHTML = PROFILE.process.map((s, i) => `
+    <div class="step fade" style="--c:${s.color};transition-delay:${i * .08}s"><span class="mono">Qadam ${pad(i + 1)}</span><h3>${esc(s.title)}</h3><p>${esc(s.desc)}</p></div>`).join("");
+
+  $("#faqList").innerHTML = PROFILE.faq.map((f, i) => `
+    <details ${i === 0 ? "open" : ""}><summary>${esc(f.q)}<span class="pm" aria-hidden="true">+</span></summary><p>${esc(f.a)}</p></details>`).join("");
+
+  $("#fService").innerHTML = `<option value="">Tanlang yoki bilmayman</option>` + PROFILE.pricing.map(l =>
+    `<optgroup label="${esc(l.level)}">${l.items.map(i => `<option value="${esc(i.name)}">${esc(i.name)}</option>`).join("")}</optgroup>`).join("");
+
+  $("#ld").textContent = JSON.stringify({
+    "@context": "https://schema.org", "@type": "ProfessionalService",
+    name: `${PROFILE.name} — AI yordamida sayt va botlar`, areaServed: "UZ",
+    url: location.href.startsWith("http") ? location.href : undefined,
+    sameAs: [`https://t.me/${PROFILE.telegram}`],
+    priceRange: `${money(Math.min(...allItems.map(i => i.price)))}–${money(Math.max(...allItems.map(i => i.price)), true)}`,
+  });
+}
+
+function renderOffer() {
+  if (!discountActive) { $("#offer").remove(); $$('a[href="#offer"]').forEach(a => a.parentElement.tagName === "LI" ? a.parentElement.remove() : a.remove()); return; }
+  $("#offerBig").textContent = `−${D.percent}%`;
+  $("#offerText").innerHTML = `Freelancer sifatida endi ochiq ishlay boshladim. Shuning uchun <b>birinchi ${D.totalSlots} ta mijozga barcha xizmatlarga −${D.percent}%</b> chegirma beraman. Evaziga faqat ikki narsa so'rayman: halol fikr-mulohazangiz va loyihani portfolioga qo'shishga ruxsat.`;
+  $("#slotsCap").innerHTML = `<b>${slotsLeft} ta</b> joy qoldi`;
+  $("#slotRow").innerHTML = Array.from({ length: D.totalSlots }, (_, i) =>
+    i < D.taken ? `<i class="taken">band</i>` : `<i class="free">${pad(i + 1)}</i>`).join("");
+  $("#perks").innerHTML = [
+    "Barcha xizmatlarga amal qiladi",
+    `${PROFILE.terms.revisions} marta bepul tuzatish`,
+    `${PROFILE.terms.supportDays} kun bepul qo'llab-quvvatlash`,
+  ].map(p => `<li>${esc(p)}</li>`).join("");
+}
+
+function renderPricing() {
+  $("#pricingNote").textContent = discountActive
+    ? `Narxlar chegirma bilan ko'rsatilgan (−${D.percent}%, birinchi ${D.totalSlots} mijozga). Aniq narx konsultatsiyadan keyin.`
+    : "Boshlang'ich narxlar. Aniq narx konsultatsiyadan keyin.";
+  $("#levels").innerHTML = PROFILE.pricing.map((l, li) => `
+    <div class="level ${l.key} fade" style="--c:${l.color};--tint:${l.tint};transition-delay:${li * .08}s">
+      <div class="level-head">
+        <div class="top"><h3>${esc(l.level)}</h3><span class="diff" aria-label="Qiyinchilik ${li + 1}/3">${[0, 1, 2].map(k => `<i class="${k <= li ? "on" : ""}"></i>`).join("")}</span></div>
+        <p>${esc(l.note)}</p>
+      </div>
+      <ul class="items">${l.items.map(i => `
+        <li class="item">
+          <h4>${esc(i.name)}</h4>
+          <span class="pr">${discountActive ? `<s>${money(i.price, i.plus)}</s><b>${money(discounted(i.price), i.plus)}</b>` : `<b>${money(i.price, i.plus)}</b>`}</span>
+          <p>${esc(i.desc)}</p>
+          <div class="meta2"><span class="term">⏱ ${esc(i.days)}</span><a href="#contact" class="order" data-order="${esc(i.name)}">Buyurtma →</a></div>
+        </li>`).join("")}</ul>
+    </div>`).join("");
+  $("#extras").innerHTML = `<span>Qo'shimcha:</span>` + PROFILE.extras.map(x => `<span class="x">${esc(x.name)}<b>${money(x.price)}${esc(x.suffix || "")}</b></span>`).join("");
+  $("#guaranteeText").innerHTML = `<b>Kafolat:</b> ${esc(PROFILE.terms.payment)}. Dizayn yoqmasa — ${PROFILE.terms.revisions} marta bepul qayta ishlayman. Ishga tushirgandan keyin ${PROFILE.terms.supportDays} kun bepul qo'llab-quvvatlash.`;
+}
+renderContent();
+
+/* ---------- hero title ---------- */
+$$(".split").forEach(h => {
+  let n = 0;
+  h.setAttribute("aria-label", h.textContent.replace(/\s+/g, " ").trim());
+  [...h.children].forEach(part => {
+    part.innerHTML = part.textContent.split(" ").map(w =>
+      `<span class="word" aria-hidden="true"><span style="transition-delay:${0.1 + (n++) * 0.07}s">${esc(w)}</span></span>`).join(" ");
+  });
+});
+requestAnimationFrame(() => setTimeout(() => {
+  document.body.classList.add("ready");
+  $$(".hero .fade").forEach((el, i) => setTimeout(() => el.classList.add("in"), 350 + i * 110));
+}, 60));
+
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: .1 });
+$$(".fade").filter(el => !el.closest(".hero")).forEach(el => io.observe(el));
+
+function toast(msg) {
+  const t = $("#toast"); t.textContent = msg; t.classList.add("show");
+  clearTimeout(toast.timer); toast.timer = setTimeout(() => t.classList.remove("show"), 3400);
+}
+
+/* ---------- form: estimate + order buttons ---------- */
+const svc = $("#fService");
+function updateEstimate() {
+  const item = allItems.find(i => i.name === svc.value);
+  $("#est").classList.toggle("show", !!item);
+  if (!item) return;
+  $("#estOld").textContent = discountActive ? money(item.price, item.plus) : "";
+  $("#estNew").textContent = `${money(discountActive ? discounted(item.price) : item.price, item.plus)} · ${item.days}`;
+}
+svc.addEventListener("change", updateEstimate);
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-order]");
+  if (!b) return;
+  svc.value = b.dataset.order; updateEstimate();
+  setTimeout(() => $("#fName").focus({ preventScroll: true }), 700);
+});
+
+const form = $("#leadForm");
+function validate() {
+  const name = $("#fName"), contact = $("#fContact");
+  const okName = name.value.trim().length >= 2;
+  const c = contact.value.trim();
+  const okContact = /^@?[a-zA-Z0-9_]{5,32}$/.test(c) || c.replace(/\D/g, "").length >= 9;
+  name.parentElement.classList.toggle("err", !okName);
+  contact.parentElement.classList.toggle("err", !okContact);
+  if (!okName) name.focus(); else if (!okContact) contact.focus();
+  return okName && okContact;
+}
+$$("#fName, #fContact").forEach(i => i.addEventListener("input", () => i.parentElement.classList.remove("err")));
+form.addEventListener("submit", async e => {
+  e.preventDefault();
+  if (!validate()) return;
+  const d = new FormData(form);
+  const item = allItems.find(i => i.name === d.get("service"));
+  const lines = [
+    "Assalomu alaykum! Saytingizdan ariza:",
+    `Ism: ${d.get("name").trim()}`,
+    `Aloqa: ${d.get("contact").trim()}`,
+    `Xizmat: ${item ? `${item.name} (${item.level})` : "hali aniq emas"}`,
+    discountActive ? `Ochilish chegirmasi: −${D.percent}%` : "",
+    d.get("message").trim() ? `Izoh: ${d.get("message").trim()}` : "",
+  ].filter(Boolean);
+  const text = lines.join("\n");
+  const link = $("#sendLink");
+  link.href = tgLink(text);
+  $("#sent").hidden = false;
+  link.focus();
+  try { await navigator.clipboard.writeText(text); toast("Ariza matni nusxalandi. Endi «Telegramda yuborish»ni bosing."); }
+  catch { toast("Ariza tayyor. Endi «Telegramda yuborish»ni bosing."); }
+});
+
+/* ---------- mobile menu ---------- */
+const burger = $(".burger");
+function toggleMenu(force) {
+  const open = force ?? !document.body.classList.contains("menu-open");
+  document.body.classList.toggle("menu-open", open);
+  burger.setAttribute("aria-expanded", open);
+  $(".mobile-menu").setAttribute("aria-hidden", !open);
+  $$(".mobile-menu a").forEach((a, i) => (a.style.transitionDelay = open ? `${.08 + i * .05}s` : "0s"));
+}
+burger.addEventListener("click", () => toggleMenu());
+$$(".mobile-menu a").forEach(a => a.addEventListener("click", () => toggleMenu(false)));
+addEventListener("keydown", e => { if (e.key === "Escape") toggleMenu(false); });
+
+/* ---------- scroll ---------- */
+const header = $("#header"), progress = $("#progress"), heroInner = $("#heroInner"), fab = $(".fab"), mbar = $("#mbar"), contact = $("#contact");
+const navIds = ["offer", "pricing", "concepts", "faq"].filter(id => document.getElementById(id));
+let lastY = scrollY, ticking = false;
+function onScroll() {
+  const y = scrollY, docH = document.documentElement.scrollHeight - innerHeight;
+  progress.style.transform = `scaleX(${docH > 0 ? y / docH : 0})`;
+  header.classList.toggle("hide", y > lastY && y > 300 && !document.body.classList.contains("menu-open"));
+  lastY = y;
+  if (!reduceMotion) {
+    const k = clamp(y / innerHeight, 0, 1);
+    heroInner.style.transform = `translateY(${k * 14}vh)`;
+    heroInner.style.opacity = String(1 - k * 1.1);
+  }
+  const cr = contact.getBoundingClientRect();
+  const showCta = y > innerHeight * .7 && !(cr.top < innerHeight && cr.bottom > 0);
+  fab.classList.toggle("show", showCta);
+  mbar.classList.toggle("show", showCta);
+  let current = "";
+  navIds.forEach(id => { if (document.getElementById(id).getBoundingClientRect().top < innerHeight * .4) current = id; });
+  $$(".links a").forEach(a => a.classList.toggle("active", a.getAttribute("href") === `#${current}`));
+}
+addEventListener("scroll", () => { if (ticking) return; ticking = true; requestAnimationFrame(() => { onScroll(); ticking = false; }); }, { passive: true });
+onScroll();
+
+/* ---------- cursor + magnetic ---------- */
+if (finePointer) {
+  const cursor = $(".cursor");
+  let mx = innerWidth / 2, my = innerHeight / 2, cx = mx, cy = my;
+  addEventListener("pointermove", e => { mx = e.clientX; my = e.clientY; });
+  (function loop() { cx += (mx - cx) * .2; cy += (my - cy) * .2; cursor.style.left = cx + "px"; cursor.style.top = cy + "px"; requestAnimationFrame(loop); })();
+  document.addEventListener("pointerover", e => cursor.classList.toggle("big", !!e.target.closest("a, button, summary, select")));
+  if (!reduceMotion) $$(".magnetic").forEach(el => {
+    el.addEventListener("pointermove", e => { const r = el.getBoundingClientRect(); el.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * .2}px, ${(e.clientY - r.top - r.height / 2) * .3}px)`; });
+    el.addEventListener("pointerleave", () => (el.style.transform = ""));
+  });
+}
+
+/* ---------- interactive dot field (desktop) ---------- */
+(function dotField() {
+  const canvas = $("#dots"), ctx = canvas.getContext("2d");
+  const DPR = Math.min(devicePixelRatio || 1, 2), REPEL = 130, SPRING = .055, FRICTION = .84;
+  let W, H, dots = [], pointer = { x: -9999, y: -9999 }, running = true, t = 0;
+  function sample() {
+    if (W <= 960) return [];
+    const off = document.createElement("canvas"); off.width = W; off.height = H;
+    const o = off.getContext("2d", { willReadFrequently: true });
+    const size = Math.min(W * .45, H * .78);
+    o.fillStyle = "#fff"; o.font = `italic 400 ${size}px "Instrument Serif", serif`;
+    o.textAlign = "center"; o.textBaseline = "middle";
+    o.fillText(PROFILE.name.charAt(0).toUpperCase(), W * .8, H * .45);
+    const data = o.getImageData(0, 0, W, H).data, pts = [];
+    for (let y = 0; y < H; y += 8) for (let x = 0; x < W; x += 8) if (data[(y * W + x) * 4 + 3] > 128) pts.push([x, y]);
+    return pts;
+  }
+  function build() {
+    W = canvas.clientWidth; H = canvas.clientHeight;
+    canvas.width = W * DPR; canvas.height = H * DPR; ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    dots = sample().map(([x, y]) => ({ hx: x, hy: y,
+      x: reduceMotion ? x : W / 2 + (Math.random() - .5) * W * 1.4, y: reduceMotion ? y : H / 2 + (Math.random() - .5) * H * 1.4,
+      vx: 0, vy: 0, r: Math.random() * 1.2 + .6, ph: Math.random() * 6.28, warm: Math.random() < .12 }));
+  }
+  function frame() {
+    if (!running) return;
+    t += .016; ctx.clearRect(0, 0, W, H);
+    for (const d of dots) {
+      const dx = d.x - pointer.x, dy = d.y - pointer.y, dist = Math.hypot(dx, dy);
+      if (dist < REPEL) { const f = (1 - dist / REPEL) * 6.5; d.vx += dx / (dist || 1) * f; d.vy += dy / (dist || 1) * f; }
+      const w = reduceMotion ? 0 : Math.sin(t * 1.4 + d.ph) * 1.2;
+      d.vx = (d.vx + (d.hx + w - d.x) * SPRING) * FRICTION; d.vy = (d.vy + (d.hy - w - d.y) * SPRING) * FRICTION;
+      d.x += d.vx; d.y += d.vy;
+      const s = Math.min(1, Math.hypot(d.vx, d.vy) / 6);
+      ctx.fillStyle = d.warm ? `rgba(255,138,91,${.55 + s * .45})` : `rgba(184,196,255,${.3 + s * .6})`;
+      ctx.beginPath(); ctx.arc(d.x, d.y, d.r + s * 1.4, 0, 6.283); ctx.fill();
+    }
+    requestAnimationFrame(frame);
+  }
+  const hero = $(".hero");
+  hero.addEventListener("pointermove", e => { const r = canvas.getBoundingClientRect(); pointer.x = e.clientX - r.left; pointer.y = e.clientY - r.top; });
+  hero.addEventListener("pointerleave", () => { pointer.x = pointer.y = -9999; });
+  new IntersectionObserver(([e]) => { const was = running; running = e.isIntersecting; if (running && !was) frame(); }).observe(hero);
+  let rt; addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(build, 200); });
+  document.fonts.ready.then(() => { build(); frame(); });
+})();
+</script>
+</body>
+</html>
